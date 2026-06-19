@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" fill="#00BCD4" rx="112"/>
+  
+  <!-- Train Body -->
+  <rect x="128" y="112" width="256" height="256" rx="48" fill="#ffffff"/>
+  
+  <!-- Window -->
+  <rect x="144" y="144" width="224" height="96" rx="16" fill="#00BCD4"/>
+  
+  <!-- Headlights -->
+  <circle cx="184" cy="304" r="20" fill="#00BCD4"/>
+  <circle cx="328" cy="304" r="20" fill="#00BCD4"/>
+  
+  <!-- Tracks / Catcher -->
+  <path d="M176 368 L144 416 L368 416 L336 368 Z" fill="#ffffff"/>
+</svg>

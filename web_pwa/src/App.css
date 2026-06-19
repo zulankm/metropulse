@@ -1,0 +1,480 @@
+/* Metro Pulse PWA Styles */
+
+:root {
+  --body-bg: #e5e5ea;
+  --app-bg: #F2F2F7;
+  --card-bg: #ffffff;
+  --text-primary: #1c1c1e;
+  --text-secondary: #8e8e93;
+  --text-muted: #aeaeb2;
+  --border-color: rgba(0, 0, 0, 0.05);
+  --card-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+  --input-bg: #fcfcfc;
+  --toggle-bg: #e5e5ea;
+  --btn-active-bg: #ffffff;
+  --pill-bg: #f0f9fa;
+  --pill-text: #00838f;
+  --home-btn-bg: #e0f7fa;
+  --home-btn-text: #00838F;
+  --work-btn-bg: #fff3e0;
+  --work-btn-text: #E65100;
+  --btn-inactive-bg: #e5e5ea;
+  --btn-inactive-text: #8e8e93;
+}
+
+[data-theme="dark"] {
+  --body-bg: #000000;
+  --app-bg: #000000;
+  --card-bg: #1c1c1e;
+  --text-primary: #ffffff;
+  --text-secondary: #8e8e93;
+  --text-muted: #636366;
+  --border-color: rgba(255, 255, 255, 0.05);
+  --card-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  --input-bg: #2c2c2e;
+  --toggle-bg: #2c2c2e;
+  --btn-active-bg: #3a3a3c;
+  --pill-bg: rgba(0, 188, 212, 0.15);
+  --pill-text: #4dd0e1;
+  --home-btn-bg: rgba(0, 188, 212, 0.15);
+  --home-btn-text: #4dd0e1;
+  --work-btn-bg: rgba(255, 152, 0, 0.15);
+  --work-btn-text: #ffb74d;
+  --btn-inactive-bg: #2c2c2e;
+  --btn-inactive-text: #636366;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background: var(--body-bg);
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+/* Smooth transition for theme switching */
+body, .app, .eta-display, .station-card, .info {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  max-width: 500px;
+  margin: 0 auto;
+  background: var(--app-bg);
+}
+
+.header {
+  background: linear-gradient(135deg, #00BCD4 0%, #0097a7 100%);
+  color: white;
+  padding: 32px 20px 24px;
+  border-bottom-left-radius: 28px;
+  border-bottom-right-radius: 28px;
+  box-shadow: 0 10px 30px rgba(0, 188, 212, 0.2);
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.live-time {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  backdrop-filter: blur(4px);
+}
+
+.theme-toggle {
+  background: rgba(255,255,255,0.2);
+  border: none;
+  color: white;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.theme-toggle:active {
+  transform: scale(0.85);
+}
+
+.header h1 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.subtitle {
+  font-size: 0.95rem;
+  opacity: 0.9;
+  font-weight: 500;
+}
+
+.widget {
+  flex: 1;
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: -12px;
+}
+
+@keyframes pulse {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(76, 175, 80, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(76, 175, 80, 0); }
+}
+
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #4CAF50;
+  border-radius: 50%;
+  display: inline-block;
+  animation: pulse 2s infinite;
+}
+
+.eta-display {
+  background: var(--card-bg);
+  border-radius: 24px;
+  padding: 36px 20px;
+  text-align: center;
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--border-color);
+  position: relative;
+}
+
+.no-trains {
+  color: var(--text-secondary);
+}
+
+.no-trains .message {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.no-trains .note {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.next-train {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.minutes-label {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+.minutes-value {
+  font-size: 5.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #00BCD4 0%, #007bb5 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1;
+  letter-spacing: -3px;
+  margin: 4px 0;
+}
+
+.minutes-unit {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.next-time-pill {
+  display: inline-block;
+  margin: 16px auto 0;
+  background: var(--pill-bg);
+  color: var(--pill-text);
+  padding: 8px 16px;
+  border-radius: 100px;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.info {
+  background: var(--card-bg);
+  border-radius: 24px;
+  padding: 20px;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--border-color);
+}
+
+.info p {
+  margin-bottom: 8px;
+}
+
+.info p:last-child {
+  margin-bottom: 0;
+}
+
+.footer {
+  background: transparent;
+  color: var(--text-muted);
+  text-align: center;
+  padding: 8px 16px 24px;
+  font-size: 0.85rem;
+}
+
+.footer p {
+  margin: 4px 0;
+}
+
+/* Station Controls & Widget UI */
+.station-card {
+  background: var(--card-bg);
+  border-radius: 24px;
+  padding: 20px;
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--border-color);
+}
+
+.station-header {
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.station-select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+  font-size: 1.1rem;
+  background: var(--input-bg);
+  color: var(--text-primary);
+  font-weight: 500;
+  outline: none;
+  appearance: none;
+  margin-bottom: 16px;
+  transition: border-color 0.2s ease;
+  
+  /* Custom Widget dropdown arrow */
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%2300BCD4%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px top 50%;
+  background-size: 12px auto;
+}
+
+.direction-toggle {
+  display: flex;
+  background: var(--toggle-bg);
+  border-radius: 12px;
+  padding: 4px;
+  margin-bottom: 16px;
+}
+
+.dir-btn {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  background: transparent;
+  border-radius: 8px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.dir-btn.active {
+  background: var(--btn-active-bg);
+  color: var(--text-primary);
+  box-shadow: var(--card-shadow);
+}
+
+.station-select:focus {
+  border-color: #00BCD4;
+}
+
+.quick-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.action-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.action-btn {
+  padding: 12px 8px;
+  border: none;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.1s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.2s ease;
+  -webkit-tap-highlight-color: transparent; /* Removes blue flash on Android */
+}
+
+.action-btn:active {
+  transform: scale(0.95); /* Native 'squish' effect on tap */
+}
+
+.quick-jump-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 8px;
+}
+
+.quick-jump-icon {
+  font-size: 1.4rem;
+  margin-bottom: 4px;
+}
+
+.quick-jump-text {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.set-btn {
+  background: none;
+  border: none;
+  font-size: 0.8rem;
+  color: #00BCD4;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.set-btn-hint {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-align: center;
+  padding: 4px;
+  display: block;
+}
+
+/* Install App Button */
+.install-app-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 16px;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #00BCD4 0%, #0097a7 100%);
+  color: white;
+  border: none;
+  font-size: 1.05rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0, 188, 212, 0.3);
+  transition: transform 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.install-app-btn:active {
+  transform: scale(0.96);
+}
+
+/* Update Toast UI */
+.update-toast {
+  position: fixed;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  border-radius: 100px;
+  padding: 10px 14px 10px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  z-index: 1000;
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  font-weight: 600;
+  white-space: nowrap;
+  animation: slideUp 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.update-btn {
+  background: linear-gradient(135deg, #00BCD4 0%, #0097a7 100%);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 100px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.close-btn {
+  background: var(--btn-inactive-bg);
+  color: var(--text-secondary);
+  border: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+@keyframes slideUp {
+  from { transform: translate(-50%, 100px); opacity: 0; }
+  to { transform: translate(-50%, 0); opacity: 1; }
+}
+
+@media (max-width: 360px) {
+  .header h1 {
+    font-size: 1.5rem;
+  }
+
+  .minutes-value {
+    font-size: 4rem;
+  }
+
+  .widget {
+    padding: 16px;
+  }
+}

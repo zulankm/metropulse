@@ -1,0 +1,59 @@
+{
+  "line": "Aqua Line",
+  "operator": "Noida Metro Rail Corporation (NMRC)",
+  "source_note": "Official NMRC per-station timing table at nmrcnoida.com blocks automated access (robots.txt). Values below are aggregated from third-party metro information sites and should be verified against the official source for precision.",
+  "stations_count": 21,
+  "route": {
+    "from": "Sector 51",
+    "to": "Depot",
+    "length_km": 29.7
+  },
+  "operating_hours": {
+    "monday_to_saturday": {
+      "first_train": "06:00",
+      "last_train": "22:00"
+    },
+    "sunday": {
+      "first_train": "08:00",
+      "last_train": "22:00"
+    },
+    "notes": "Some sources list last train as 22:45 on certain routes/days; official confirmation recommended."
+  },
+  "frequency": {
+    "weekday_peak": {
+      "hours": ["08:00-11:00", "17:00-20:00"],
+      "interval_minutes": "7.5 to 10"
+    },
+    "weekday_off_peak": {
+      "interval_minutes": 15
+    },
+    "weekend": {
+      "interval_minutes": "10 to 15"
+    }
+  },
+  "fleet": {
+    "trains": 13,
+    "daily_trips": 221,
+    "coaches_per_train": 4,
+    "capacity_per_train": {
+      "seated": 186,
+      "standing": 848
+    }
+  },
+  "interchange": {
+    "station": "Sector 51",
+    "connects_to": "Delhi Metro Blue Line (Sector 52)",
+    "note": "Skywalk between NMRC Sector 51 and DMRC Sector 52 reported as not yet operational"
+  },
+  "sample_station_data": {
+    "NSEZ": {
+      "first_train_approx": {
+        "towards_Sector_142": "06:12",
+        "towards_Sector_51": "06:07"
+      },
+      "last_train_approx": "22:04",
+      "note": "Approximate, may vary by direction/weekend/holiday"
+    }
+  },
+  "ticketing_note": "Delhi Metro smart cards are NOT valid on Aqua Line. Requires separate NMRC CITY1 smart card or QR ticket."
+}

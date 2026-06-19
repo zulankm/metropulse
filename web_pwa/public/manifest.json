@@ -1,0 +1,67 @@
+{
+  "name": "Metro Pulse — NMRC Aqua Line ETA",
+  "short_name": "Metro Pulse",
+  "description": "Real-time ETA widget for NMRC Aqua Line. Save to your home screen.",
+  "start_url": ".",
+  "scope": ".",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#00BCD4",
+  "background_color": "#ffffff",
+  "icons": [
+    {
+      "src": "metro-pulse-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "metro-pulse-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "metro-pulse-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "metro-pulse-icon-maskable-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "metro-pulse-icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "screenshot-1.png",
+      "sizes": "540x720",
+      "type": "image/png",
+      "form_factor": "narrow"
+    }
+  ],
+  "categories": ["transport", "utilities"],
+  "shortcuts": [
+    {
+      "name": "Next ETA",
+      "short_name": "ETA",
+      "description": "Check the next NMRC Aqua Line departure",
+      "url": ".",
+      "icons": [
+        {
+          "src": "metro-pulse-icon.svg",
+          "sizes": "any",
+          "type": "image/svg+xml"
+        }
+      ]
+    }
+  ]
+}
