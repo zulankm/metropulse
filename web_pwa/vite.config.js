@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 import { VitePWA } from 'vite-plugin-pwa'
 
 export default defineConfig({
-  base: '/', // Custom domain: metropulse.in — served from root, no sub-path needed
+  base: '/', // Deployment URL: metropulse-zeta.vercel.app — served from root, no sub-path needed
   plugins: [
     react(),
     VitePWA({

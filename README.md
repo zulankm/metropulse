@@ -1,12 +1,12 @@
 # Metro Pulse 🚇
 
 [![Deploy to GitHub Pages](https://github.com/zulankm/metropulse/actions/workflows/deploy.yml/badge.svg)](https://github.com/zulankm/metropulse/actions/workflows/deploy.yml)
-[![Vercel Deployment](https://img.shields.io/badge/deployed_on-Vercel-black?logo=vercel)](https://metropulse.in)
+[![Vercel Deployment](https://img.shields.io/badge/deployed_on-Vercel-black?logo=vercel)](https://metropulse-zeta.vercel.app)
 [![PWA Ready](https://img.shields.io/badge/PWA-Ready-orange?logo=pwa)](https://web.dev/progressive-web-apps/)
 
-**Metro Pulse** is a fast, offline-first Progressive Web App (PWA) designed to provide instant departure schedules and real-time ETA estimates for the Noida Metro Rail Corporation (NMRC) Aqua Line. Built with mobile-first experiences in mind, it functions as a lightweight home screen widget with physical haptic responses, offline capabilities, and instant loading times.
+**Metro Pulse** is a fast, offline-first Progressive Web App (PWA) designed to provide instant departure schedules and real-time ETA estimates for the Noida Metro Rail Corporation (NMRC) Aqua Line. Built with mobile-first experiences in mind, it functions as a lightweight home screen app with physical haptic responses, offline capabilities, and instant loading times.
 
-Live Demo: **[metropulse.in](https://metropulse.in)**
+Live Demo: **[metropulse-zeta.vercel.app](https://metropulse-zeta.vercel.app)**
 
 ---
 
@@ -14,7 +14,7 @@ Live Demo: **[metropulse.in](https://metropulse.in)**
 
 - ⏱️ **Real-time ETAs**: Computes the exact minutes and seconds remaining for the next departures.
 - 📶 **Offline-First Support**: Fully cached assets and schedules via custom-configured service workers.
-- 📱 **Installable Widget UI**: Custom app manifest allows adding to home screen on iOS and Android for a native app feel.
+- 📱 **Installable PWA App**: Custom app manifest allows adding to home screen on iOS and Android for a native app feel.
 - 📳 **Haptic Feedback**: Simulates native device vibrations for user interactions on supported touch screens.
 - 🌓 **Automated Theme Detection**: Follows OS preferences for dark or light modes, with a manual override option.
 - ⚡ **Zero Latency**: Calculations run entirely on-device (no database API calls or backend delays).
@@ -73,7 +73,7 @@ Make sure you have [Node.js](https://nodejs.org/) installed (version 18 or 20 is
 
 ## 🚀 Deployment
 
-Metro Pulse supports automated and manual deployments. The active main website is configured on Vercel at `metropulse.in`.
+Metro Pulse supports automated and manual deployments. The active main website is configured on Vercel at `metropulse-zeta.vercel.app`.
 
 ### GitHub Pages (Automated CI/CD)
 The project includes a GitHub Action in `.github/workflows/deploy.yml`. Every commit pushed to the `main` branch is built and deployed automatically.

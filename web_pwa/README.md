@@ -1,4 +1,4 @@
-# Metro Pulse — NMRC PWA Widget
+# Metro Pulse — NMRC PWA App
 
 A Progressive Web App (PWA) for quick access to NMRC Aqua Line ETAs. Save to your home screen on Android or iOS for instant access.
 

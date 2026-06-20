@@ -1,6 +1,6 @@
 # Deployment Guide — Metro Pulse PWA
 
-Deploy your NMRC widget in <5 minutes to Vercel or Netlify.
+Deploy your NMRC PWA app in <5 minutes to Vercel or Netlify.
 
 ## Option 1: Vercel (Recommended) ⭐
 
@@ -99,14 +99,14 @@ Deploy your NMRC widget in <5 minutes to Vercel or Netlify.
 1. Visit your deployed URL on your Android phone
 2. Tap the three-dot menu → "Add to Home screen"
 3. Tap "Install"
-4. The widget is now on your home screen—try it!
+4. The app is now on your home screen—try it!
 
 ### On iOS
 1. Visit your deployed URL on your iPhone/iPad
 2. Tap the Share button (bottom center or top right)
 3. Scroll and tap "Add to Home Screen"
 4. Tap "Add"
-5. The widget is now on your home screen—try it!
+5. The app is now on your home screen—try it!
 
 ---
 
@@ -133,8 +133,8 @@ Deploy your NMRC widget in <5 minutes to Vercel or Netlify.
 
 1. **Share on Twitter**
    - Post a link to your deployed PWA
-   - Include a GIF showing the widget on a home screen
-   - Mention it's an NMRC Aqua Line ETA widget, free and no account needed
+   - Include a GIF showing the app on a home screen
+   - Mention it's an NMRC Aqua Line ETA app, free and no account needed
 
 2. **Gather feedback**
    - Pin a Notion/Airtable form in your Twitter replies for feedback
