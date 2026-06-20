@@ -3,6 +3,7 @@ import { Schedule, minutesUntilNextDeparture, getNextDepartureTime, formatTime, 
 import { nmrcAquaLineSchedule, stations } from './scheduleData';
 import './App.css';
 import { useRegisterSW } from 'virtual:pwa-register/react';
+import { Analytics } from '@vercel/analytics/react';
 
 export default function App() {
   const [schedule] = useState(() => new Schedule(nmrcAquaLineSchedule));
@@ -312,6 +313,7 @@ export default function App() {
           <button className="close-btn" onClick={() => setNeedRefresh(false)}>×</button>
         </div>
       )}
+      <Analytics />
     </div>
   );
 }
