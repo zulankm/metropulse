@@ -18,11 +18,11 @@ export default function App() {
   // Hook to handle service worker updates
   const { needRefresh: [needRefresh, setNeedRefresh], updateServiceWorker } = useRegisterSW();
 
-  // Init theme based on saved preference, falling back to the user's OS system default
+  // Init theme based on saved preference, falling back to dark mode
   const [theme, setTheme] = useState(() => {
     const stored = localStorage.getItem('theme');
     if (stored) return stored;
-    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    return 'dark';
   });
 
   // Security: Validate localStorage against our known list of stations
