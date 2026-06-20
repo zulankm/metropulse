@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 import { VitePWA } from 'vite-plugin-pwa'
 
 export default defineConfig({
-  base: '/metropulse/', // IMPORTANT: Change this to match your exact GitHub repository name!
+  base: '/', // Custom domain: metropulse.in — served from root, no sub-path needed
   plugins: [
     react(),
     VitePWA({
